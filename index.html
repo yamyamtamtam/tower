@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tower Defense</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="game-canvas"></canvas>
+
+    <!-- 上部HUD -->
+    <div id="hud-top">
+      <div class="hud-item" id="hud-money">💰 <span id="money">0</span></div>
+      <div class="hud-item" id="hud-lives">❤️ <span id="lives">0</span></div>
+      <div class="hud-item" id="hud-wave">🌊 Wave <span id="wave">0</span></div>
+      <div class="hud-spacer"></div>
+      <button id="btn-speed" class="hud-btn" title="ゲーム速度">▶ x1</button>
+      <button id="btn-pause" class="hud-btn" title="一時停止">⏸</button>
+    </div>
+
+    <!-- タワー選択パネル -->
+    <div id="build-panel">
+      <div class="build-card" data-tower="arrow">
+        <div class="build-icon" style="--c:#4fc3f7">🏹</div>
+        <div class="build-name">アロー</div>
+        <div class="build-cost">$50</div>
+      </div>
+      <div class="build-card" data-tower="cannon">
+        <div class="build-icon" style="--c:#ff8a65">💣</div>
+        <div class="build-name">キャノン</div>
+        <div class="build-cost">$100</div>
+      </div>
+      <div class="build-card" data-tower="ice">
+        <div class="build-icon" style="--c:#81d4fa">❄️</div>
+        <div class="build-name">アイス</div>
+        <div class="build-cost">$75</div>
+      </div>
+      <div class="build-card" data-tower="sniper">
+        <div class="build-icon" style="--c:#ba68c8">🎯</div>
+        <div class="build-name">スナイパー</div>
+        <div class="build-cost">$120</div>
+      </div>
+      <button id="btn-wave" class="wave-btn">Wave 開始</button>
+    </div>
+
+    <!-- 選択中タワーの情報パネル -->
+    <div id="tower-panel" class="hidden">
+      <div id="tower-panel-title">タワー</div>
+      <div id="tower-panel-stats"></div>
+      <div class="tower-panel-buttons">
+        <button id="btn-upgrade">強化 <span id="upgrade-cost"></span></button>
+        <button id="btn-sell">売却 <span id="sell-value"></span></button>
+      </div>
+    </div>
+
+    <!-- ゲームオーバー / クリア -->
+    <div id="overlay" class="hidden">
+      <div id="overlay-box">
+        <h1 id="overlay-title"></h1>
+        <p id="overlay-text"></p>
+        <button id="btn-restart">もう一度プレイ</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/assets.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
